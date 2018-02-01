@@ -35,6 +35,21 @@ int line_error_handling(int line, map_t *board)
 	return (0);
 }
 
+int check_and_print_lost_sentence(bool lost, map_t *board)
+{
+	if (board->remaining_matches != 0)
+		return (0);
+	if (lost == 0) {
+		my_printf("You lost, too bad...\n");
+		return (2);
+	} else {
+		my_printf("I lost... snif... but I'll get you next");
+		my_printf(" time!!\n");
+		return (1);
+	}
+	return (0);
+}
+
 int game_loop(map_t *board)
 {
 	int error_no = -1;
@@ -47,16 +62,11 @@ int game_loop(map_t *board)
 			return (84);
 		else if (error_no == 1)
 			continue;
-		if (board->remaining_matches == 0) {
-			my_printf("You lost, too bad...\n");
+		if (check_and_print_lost_sentence(0, board) != 0)
 			return (2);
-		}
 		compute_ai_turn(board);
-		if (board->remaining_matches == 0) {
-			my_printf("I lost... snif... but I'll get you next");
-			my_printf(" time!!\n");
+		if (check_and_print_lost_sentence(1, board) != 0)
 			return (1);
-		}
 		error_no = -1;
 	}
 	return (0);
