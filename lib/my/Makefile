@@ -45,7 +45,9 @@ SRC	=	my_compute_power_rec.c	\
 		my_str_to_word_array.c	\
 		my_fastcmp.c	\
 		my_strdup.c	\
-		my_get_next_line.c
+		my_get_next_line.c	\
+		sum_n_odd_numbers.c	\
+		sum_n_even_numbers.c
 
 OBJ	=	$(SRC:.c=.o)
 

@@ -16,7 +16,7 @@ int matches_error_handling(int line, int nb_matches, map_t *board)
 	}
 	if (nb_matches > board->max_take_out) {
 		my_printf("Error: you cannot remove more ");
-		my_printf("than %d matches per turn\n", nb_matches);
+		my_printf("than %d matches per turn\n", board->max_take_out);
 		return (1);
 	}
 	if (nb_matches > real_nb_matches) {
@@ -37,29 +37,27 @@ int line_error_handling(int line, map_t *board)
 
 int game_loop(map_t *board)
 {
-	char *player_input = NULL;
-	int error_no = 0;
-	int pass = 0;
+	int error_no = -1;
 
 	while (1) {
-		if (pass == 0) {
-			my_printf("Your turn:\n");
-			pass++;
-		}
-		error_no = compute_player_turn(board, player_input);
-		free(player_input);
+		if (error_no == -1)
+			my_printf("\nYour turn:\n");
+		error_no = compute_player_turn(board);
 		if (error_no == 84)
 			return (84);
 		else if (error_no == 1)
 			continue;
-		pass = 0;
-		/*
-		error_no = compute_ai_turn(board, player_input);
-		free(player_input);
-		if (error_no == 84)
-			return (84);
-		else if (error_no == 1)
-			continue;*/
+		if (board->remaining_matches == 0) {
+			my_printf("You lost, too bad...\n");
+			return (2);
+		}
+		compute_ai_turn(board);
+		if (board->remaining_matches == 0) {
+			my_printf("I lost... snif... but I'll get you next");
+			my_printf(" time!!\n");
+			return (1);
+		}
+		error_no = -1;
 	}
-	return (look_who_won(board));
+	return (0);
 }

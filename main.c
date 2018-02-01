@@ -9,6 +9,7 @@
 int	main(int ac, char **av)
 {
 	map_t board;
+	int error_no = 0;
 
 	if (ac != 3)
 		return (84);
@@ -17,9 +18,9 @@ int	main(int ac, char **av)
 		return (84);
 	for (int i = 0; board.map[i]; i++)
 		my_printf("%s\n", board.map[i]);
-	game_loop(&board);
+	error_no = game_loop(&board);
 	for (int i = 0; board.map[i]; i++)
 		free(board.map[i]);
 	free(board.map);
-	return (0);
+	return (error_no);
 }

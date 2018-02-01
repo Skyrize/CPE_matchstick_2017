@@ -17,6 +17,7 @@ int get_line(int *line, map_t *board, char *player_input)
 		return (1);
 	}
 	*line = my_getnbr(player_input);
+	free(player_input);
 	return (line_error_handling(*line, board));
 }
 
@@ -31,11 +32,13 @@ int get_matches(int line, int *matches, map_t *board, char *player_input)
 		return (1);
 	}
 	*matches = my_getnbr(player_input);
+	free(player_input);
 	return (matches_error_handling(line, *matches, board));
 }
 
-int compute_player_turn(map_t *board, char *player_input)
+int compute_player_turn(map_t *board)
 {
+	char *player_input = NULL;
 	int line = 0;
 	int matches = 0;
 	int error_no = get_line(&line, board, player_input);
@@ -47,13 +50,6 @@ int compute_player_turn(map_t *board, char *player_input)
 		return (error_no);
 	board->remaining_matches -= matches;
 	my_printf("Player removed %d match(es) from line %d\n", matches, line);
-	for (int i = 2 + 2 * (board->lines - 1); i > 0 && matches != 0; i--) {
-		if (board->map[line][i] == '|') {
-			board->map[line][i] = ' ';
-			matches--;
-		}
-	}
-	for (int i = 0; board->map[i]; i++)
-		my_printf("%s\n", board->map[i]);
+	remove_matches_from_line_and_print(board, matches, line);
 	return (0);
 }

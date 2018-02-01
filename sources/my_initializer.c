@@ -66,6 +66,6 @@ map_t init_board(char **str)
 		my_map.lines = -1;
 		return (my_map);
 	}
-	my_map.remaining_matches = 2 * (my_map.lines - 1);
+	my_map.remaining_matches = sum_n_odd_numbers(my_map.lines);
 	return (my_map);
 }

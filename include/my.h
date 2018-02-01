@@ -62,6 +62,8 @@ char **my_str_to_word_array(char *, char);
 int my_fastcmp(char const *, char const *);
 char *my_strdup(char *);
 char *my_get_next_line(int);
+int sum_n_odd_numbers(int);
+int sum_n_even_numbers(int);
 
 /* MY_PRINTF */
 
@@ -97,10 +99,11 @@ typedef struct map_s
 map_t init_board(char **);
 int game_loop(map_t *);
 int count_matches_on_line(int, map_t *);
-int compute_player_turn(map_t *, char *);
-int compute_ai_turn(map_t *, char *);
+int compute_player_turn(map_t *);
+int compute_ai_turn(map_t *);
 int look_who_won(map_t *);
 int matches_error_handling(int, int, map_t *);
 int line_error_handling(int, map_t *);
+void remove_matches_from_line_and_print(map_t *, int, int);
 
 #endif /* MY_H_ */
