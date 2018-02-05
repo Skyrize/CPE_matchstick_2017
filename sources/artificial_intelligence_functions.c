@@ -32,15 +32,34 @@ int number_on_line(char **map, int line)
 	return (matches);
 }
 
+void specify_some_move(map_t *board, int nb_on_line, int *matches, int *line)
+{
+	int *status = check_map_status(board);
+
+	if (status[1] == 1) {
+		*line = seek_last_line(board);
+		nb_on_line = number_on_line(board->map, *line);
+	}
+	if (nb_on_line <= board->max_take_out) {
+		if (board->remaining_matches == nb_on_line)
+			*matches = nb_on_line - 1;
+		else if (board->remaining_matches == nb_on_line + 1)
+			*matches = nb_on_line;
+	}
+	free(status);
+}
+
 int compute_ai_turn(map_t *board)
 {
 	int line = seek_a_line(board->map);
-	int matches = random() % number_on_line(board->map, line) + 1;
+	int nb_on_line = number_on_line(board->map, line);
+	int matches = random() % nb_on_line + 1;
 
-	if (matches > board->max_take_out)
-		matches = matches % board->max_take_out;
-	board->remaining_matches -= matches;
 	my_printf("\nAI's turn..\n");
+	if (matches > board->max_take_out)
+		matches = matches % board->max_take_out + 1;
+	specify_some_move(board, nb_on_line, &matches, &line);
+	board->remaining_matches -= matches;
 	my_printf("AI removed %d match(es) from line %d\n", matches, line);
 	remove_matches_from_line_and_print(board, matches, line);
 	return (0);

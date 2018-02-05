@@ -9,7 +9,7 @@ CC		=	gcc
 
 WFLAGS		=	-Wextra -W -Wall -Wparentheses -Wsign-compare -Wpointer-sign -Wuninitialized -Wunused-but-set-variable
 
-CFLAGS		=	-I./include -g3 -L./lib/my/ -lmy
+CFLAGS		=	-I./include -L./lib/my/ -lmy
 
 COV	=	 --coverage -lcriterion
 
@@ -20,9 +20,15 @@ SRC	=	main.c	\
 		sources/my_displayer.c	\
 		sources/matches_tools.c	\
 		sources/artificial_intelligence_functions.c	\
-		sources/player_turn_functions.c
+		sources/player_turn_functions.c	\
+		sources/map_info.c
 
-SRCTEST	=
+SRCTEST	=	sources/my_initializer.c	\
+		sources/my_displayer.c	\
+		sources/matches_tools.c	\
+		sources/artificial_intelligence_functions.c	\
+		sources/player_turn_functions.c	\
+		tests/check_and_print_lost_sentence_test.c
 
 OBJS	=	$(SRC:.c=.o)
 

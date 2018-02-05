@@ -59,7 +59,7 @@ int game_loop(map_t *board)
 			my_printf("\nYour turn:\n");
 		error_no = compute_player_turn(board);
 		if (error_no == 84)
-			return (84);
+			return (0);
 		else if (error_no == 1)
 			continue;
 		if (check_and_print_lost_sentence(0, board) != 0)

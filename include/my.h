@@ -101,9 +101,11 @@ int game_loop(map_t *);
 int count_matches_on_line(int, map_t *);
 int compute_player_turn(map_t *);
 int compute_ai_turn(map_t *);
-int look_who_won(map_t *);
 int matches_error_handling(int, int, map_t *);
 int line_error_handling(int, map_t *);
 void remove_matches_from_line_and_print(map_t *, int, int);
+int *check_map_status(map_t *);
+int number_on_line(char **, int);
+int seek_last_line(map_t *);
 
 #endif /* MY_H_ */

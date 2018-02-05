@@ -18,12 +18,6 @@ void remove_matches_from_line_and_print(map_t *board, int matches, int line)
 		my_printf("%s\n", board->map[i]);
 }
 
-int look_who_won(map_t *board)
-{
-	(void)board;
-	return (0);
-}
-
 int count_matches_on_line(int line, map_t *board)
 {
 	int count = 0;
