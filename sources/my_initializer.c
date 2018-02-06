@@ -4,6 +4,7 @@
 ** File description:
 ** (enter)
 */
+
 #include "my.h"
 
 void place_sticks(char **map, int length)

@@ -9,7 +9,7 @@ int my_is_prime(int nb)
 {
 	if (nb < 2)
 		return (0);
-	for (int i = nb - 1 ; i > 1 ; i--) {
+	for (int i = nb - 1; i > 1; i--) {
 		if (nb % i == 0)
 			return (0);
 	}

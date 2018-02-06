@@ -4,6 +4,7 @@
 ** File description:
 ** (enter)
 */
+
 #include "my.h"
 
 int seek_a_line(char **map)

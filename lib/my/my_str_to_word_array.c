@@ -4,6 +4,7 @@
 ** File description:
 ** (main.c bootstrap minishell_1)
 */
+
 #include "../../include/my.h"
 
 int count_words(char *str, char sep)

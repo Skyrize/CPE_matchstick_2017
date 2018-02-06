@@ -4,6 +4,7 @@
 ** File description:
 ** concatenates two strings
 */
+
 #include "../../include/my.h"
 
 char *my_strcat(char *dest, char const *src)
@@ -14,11 +15,13 @@ char *my_strcat(char *dest, char const *src)
 
 	if (!new_str)
 		return (NULL);
-	for (int i = 0; dest[i]; i++, x++) {
+	for (int i = 0; dest[i]; i++) {
 		new_str[x] = dest[i];
+		x++;
 	}
-	for (int i = 0; src[i]; i++, x++) {
+	for (int i = 0; src[i]; i++) {
 		new_str[x] = src[i];
+		x++;
 	}
 	new_str[x] = 0;
 	return (new_str);

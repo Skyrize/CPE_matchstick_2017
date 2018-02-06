@@ -4,6 +4,7 @@
 ** File description:
 ** (enter)
 */
+
 #include "my.h"
 
 int matches_error_handling(int line, int nb_matches, map_t *board)

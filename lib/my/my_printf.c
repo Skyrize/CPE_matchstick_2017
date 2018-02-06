@@ -4,6 +4,7 @@
 ** File description:
 ** my printf fonction
 */
+
 #include <stdarg.h>
 #include "../../include/my.h"
 
@@ -43,7 +44,7 @@ void redirector(fnct_t *tab, char type, va_list list, int *i)
 {
 	if (type == '\0')
 		(*i)--;
-	for (int j = 0 ; j < 12 ; j++) {
+	for (int j = 0; j < 12; j++) {
 		if (tab[j].balise == type)
 			tab[j].fptr(list);
 	}

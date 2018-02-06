@@ -86,7 +86,7 @@ typedef struct fnct_s
 	void (*fptr)(va_list list);
 } fnct_t;
 
- /* MATCHSTICK */
+/* MATCHSTICK */
 
 typedef struct map_s
 {

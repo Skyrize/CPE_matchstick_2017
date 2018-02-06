@@ -4,6 +4,7 @@
 ** File description:
 ** (enter)
 */
+
 #include "my.h"
 
 void remove_matches_from_line_and_print(map_t *board, int matches, int line)

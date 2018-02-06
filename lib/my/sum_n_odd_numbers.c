@@ -4,6 +4,7 @@
 ** File description:
 ** (enter)
 */
+
 #include "../../include/my.h"
 
 int sum_n_odd_numbers(int n)
@@ -14,7 +15,7 @@ int sum_n_odd_numbers(int n)
 	for (int i = 0; i < n; i++) {
 		number = 1;
 		for (int j = 0; j < i; j++)
-	 		number += 2;
+			number += 2;
 		sum += number;
 	}
 	return (sum);

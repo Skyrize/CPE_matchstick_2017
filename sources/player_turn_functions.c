@@ -4,6 +4,7 @@
 ** File description:
 ** (enter)
 */
+
 #include "my.h"
 
 int get_line(int *line, map_t *board, char *player_input)

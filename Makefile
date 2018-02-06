@@ -11,7 +11,7 @@ WFLAGS		=	-Wextra -W -Wall -Wparentheses -Wsign-compare -Wpointer-sign -Wuniniti
 
 CFLAGS		=	-I./include -L./lib/my/ -lmy
 
-COV	=	 --coverage -lcriterion
+COV	=	--coverage -lcriterion
 
 RM	=	rm -rf
 

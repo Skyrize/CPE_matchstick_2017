@@ -4,6 +4,7 @@
 ** File description:
 ** (enter)
 */
+
 #include "../../include/my.h"
 
 int my_fastcmp(char const *s1, char const *s2)
