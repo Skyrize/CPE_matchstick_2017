@@ -20,8 +20,7 @@ SRC	=	main.c	\
 		sources/my_displayer.c	\
 		sources/matches_tools.c	\
 		sources/artificial_intelligence_functions.c	\
-		sources/player_turn_functions.c	\
-		sources/map_info.c
+		sources/player_turn_functions.c
 
 SRCTEST	=	sources/my_initializer.c	\
 		sources/my_displayer.c	\
