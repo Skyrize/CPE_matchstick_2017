@@ -15,6 +15,7 @@ int get_line(int *line, map_t *board, char *player_input)
 		return (84);
 	if (my_str_isnum(player_input) != 0) {
 		my_printf("Error: invalid input (positive number expected)\n");
+		free(player_input);
 		return (1);
 	}
 	*line = my_getnbr(player_input);
@@ -30,6 +31,7 @@ int get_matches(int line, int *matches, map_t *board, char *player_input)
 		return (84);
 	if (my_str_isnum(player_input) != 0) {
 		my_printf("Error: invalid input (positive number expected)\n");
+		free(player_input);
 		return (1);
 	}
 	*matches = my_getnbr(player_input);
