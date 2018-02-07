@@ -39,7 +39,7 @@ int compute_ai_turn(map_t *board)
 	int nb_on_line = number_on_line(board->map, line);
 	int matches = random() % nb_on_line + 1;
 
-	my_printf("\nAI's turn..\n");
+	my_printf("\nAI's turn...\n");
 	if (matches > board->max_take_out)
 		matches = matches % board->max_take_out + 1;
 	board->remaining_matches -= matches;
