@@ -107,5 +107,8 @@ void remove_matches_from_line_and_print(map_t *, int, int);
 int *check_map_status(map_t *);
 int number_on_line(char **, int);
 int seek_last_line(map_t *);
+void place_sticks(char **, int);
+void my_box_creator(int, char **, int, int);
+char **my_map_creator(int);
 
 #endif /* MY_H_ */
