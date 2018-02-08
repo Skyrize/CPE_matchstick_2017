@@ -19,7 +19,7 @@ Test(matches_error_handling, invalid_matches_remove, .init = cr_redirect_stdout)
 	str[2] = my_strdup("100");
 	board = init_board(str);
 	got = matches_error_handling(1, 0, &board);
-	cr_assert_stdout_eq_str(final);
+	cr_assert_stdout_eq_str(final, "Invalid sentence !\n");
 	cr_assert_eq(got, 1, "Wrong return !\n");
 }
 
@@ -37,7 +37,7 @@ Test(matches_error_handling, too_many_matches, .init = cr_redirect_stdout)
 	str[2] = my_strdup("100");
 	board = init_board(str);
 	got = matches_error_handling(1, 150, &board);
-	cr_assert_stdout_eq_str(final);
+	cr_assert_stdout_eq_str(final, "Invalid sentence !\n");
 	cr_assert_eq(got, 1, "Wrong return !\n");
 }
 
@@ -53,7 +53,7 @@ Test(matches_error_handling, not_enough_matches, .init = cr_redirect_stdout)
 	str[2] = my_strdup("100");
 	board = init_board(str);
 	got = matches_error_handling(2, 4, &board);
-	cr_assert_stdout_eq_str(final);
+	cr_assert_stdout_eq_str(final, "Invalid sentence !\n");
 	cr_assert_eq(got, 1, "Wrong return !\n");
 }
 

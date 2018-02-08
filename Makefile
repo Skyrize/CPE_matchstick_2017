@@ -30,6 +30,7 @@ SRCTEST	=	tests/place_sticks_test.c	\
 		tests/number_on_line_test.c	\
 		tests/compute_ai_turn_test.c	\
 		tests/matches_error_handling_test.c	\
+		tests/line_error_handling_test.c	\
 		sources/my_initializer.c	\
 		sources/my_displayer.c	\
 		sources/matches_tools.c	\
