@@ -112,5 +112,6 @@ void place_sticks(char **, int);
 void my_box_creator(int, char **, int, int);
 char **my_map_creator(int);
 int seek_a_line(char **);
+int check_and_print_lost_sentence(bool, map_t *);
 
 #endif /* MY_H_ */
