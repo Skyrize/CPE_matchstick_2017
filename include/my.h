@@ -20,6 +20,7 @@
 #include <fcntl.h>
 #include <wait.h>
 #include <criterion/criterion.h>
+#include <criterion/redirect.h>
 #include <errno.h>
 #ifndef READ_SIZE
 #define READ_SIZE 3
@@ -110,5 +111,6 @@ int seek_last_line(map_t *);
 void place_sticks(char **, int);
 void my_box_creator(int, char **, int, int);
 char **my_map_creator(int);
+int seek_a_line(char **);
 
 #endif /* MY_H_ */

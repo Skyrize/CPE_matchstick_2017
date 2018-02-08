@@ -12,7 +12,7 @@ int matches_error_handling(int line, int nb_matches, map_t *board)
 	int real_nb_matches = count_matches_on_line(line, board);
 
 	if (nb_matches <= 0) {
-		my_printf("Error: you have to remove at least on match\n");
+		my_printf("Error: you have to remove at least one match\n");
 		return (1);
 	}
 	if (nb_matches > board->max_take_out) {

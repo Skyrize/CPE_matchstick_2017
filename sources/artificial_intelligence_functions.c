@@ -9,15 +9,16 @@
 
 int seek_a_line(char **map)
 {
-	int line = 1;
-	int j = 0;
+	int j = 1;
 
-	for (int i = 0; map[j][i] != '|'; i++) {
+	for (int i = 0; map[j] && map[j][i] != '|'; i++) {
 		if (map[i] == 0) {
 			j++;
 			i = -1;
 		}
 	}
+	if (map[j] == NULL)
+		return (0);
 	return (j);
 }
 
