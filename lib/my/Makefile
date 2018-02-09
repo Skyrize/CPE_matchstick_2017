@@ -65,5 +65,6 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f $(NAMELIB)
 
 re:	fclean all
