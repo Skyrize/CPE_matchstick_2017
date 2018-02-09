@@ -33,6 +33,7 @@ SRCTEST	=	tests/place_sticks_test.c	\
 		tests/line_error_handling_test.c	\
 		tests/check_and_print_lost_sentence_test.c	\
 		tests/remove_matches_from_line_and_print_test.c	\
+		tests/count_matches_on_line_test.c	\
 		sources/my_initializer.c	\
 		sources/my_displayer.c	\
 		sources/matches_tools.c	\
