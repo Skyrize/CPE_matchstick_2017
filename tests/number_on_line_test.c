@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-Test(number_on_line, simple_test)
+Test(number_on_line, test_simple)
 {
 	char **map = malloc(sizeof(char *) * 6);
 	int got = 0;

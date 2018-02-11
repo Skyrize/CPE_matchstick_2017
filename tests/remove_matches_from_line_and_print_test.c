@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-Test(remove_matches_from_line_and_print, test_remove1)
+Test(remove_matches_from_line_and_print, test_remove_1)
 {
 	char **str = malloc(sizeof(char *) * 3);
 	map_t board;
@@ -25,7 +25,7 @@ Test(remove_matches_from_line_and_print, test_remove1)
 	cr_assert_null(board.map[5], "Last index isn't null !!\n");
 }
 
-Test(remove_matches_from_line_and_print, testprint, .init = cr_redirect_stdout)
+Test(remove_matches_from_line_and_print, test_print, .init = cr_redirect_stdout)
 {
 	char **str = malloc(sizeof(char *) * 3);
 	char *final = "*******\n*  |  *\n* |   *\n*|||||*\n*******\n";

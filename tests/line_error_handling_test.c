@@ -23,7 +23,7 @@ Test(line_error_handling, simple_test, .init = cr_redirect_stdout)
 	cr_assert_eq(got, 1, "Wrong return !\n");
 }
 
-Test(line_error_handling, valid_return, .init = cr_redirect_stdout)
+Test(line_error_handling, test_valid_return, .init = cr_redirect_stdout)
 {
 	char **str = malloc(sizeof(char *) * 3);
 	map_t board;

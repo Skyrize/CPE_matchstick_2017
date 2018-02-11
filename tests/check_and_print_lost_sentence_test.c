@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-Test(check_and_print_lost_sentence, player_lose, .init = cr_redirect_stdout)
+Test(check_and_print_lost_sentence, test_lose, .init = cr_redirect_stdout)
 {
 	char **str = malloc(sizeof(char *) * 3);
 	map_t board;
@@ -24,7 +24,7 @@ Test(check_and_print_lost_sentence, player_lose, .init = cr_redirect_stdout)
 	cr_assert_eq(got, 2, "Wrong return !\n");
 }
 
-Test(check_and_print_lost_sentence, AI_lose, .init = cr_redirect_stdout)
+Test(check_and_print_lost_sentence, test_AI_lose, .init = cr_redirect_stdout)
 {
 	char **str = malloc(sizeof(char *) * 3);
 	map_t board;
@@ -41,7 +41,7 @@ Test(check_and_print_lost_sentence, AI_lose, .init = cr_redirect_stdout)
 	cr_assert_eq(got, 1, "Wrong return !\n");
 }
 
-Test(check_and_print_lost_sentence, not_lose_yet, .init = cr_redirect_stdout)
+Test(check_and_print_lost_sentence, test_not_lose, .init = cr_redirect_stdout)
 {
 	char **str = malloc(sizeof(char *) * 3);
 	map_t board;

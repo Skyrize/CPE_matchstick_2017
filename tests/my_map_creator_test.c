@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-Test(my_map_creator, simple_test)
+Test(my_map_creator, test_simple)
 {
 	char **map = my_map_creator(2);
 
@@ -18,7 +18,7 @@ Test(my_map_creator, simple_test)
 	cr_assert_null(map[4], "Last index isn't null !!\n");
 }
 
-Test(my_map_creator, simple_test2)
+Test(my_map_creator, test_simple_2)
 {
 	char **map = my_map_creator(3);
 
@@ -30,7 +30,7 @@ Test(my_map_creator, simple_test2)
 	cr_assert_null(map[5], "Last index isn't null !!\n");
 }
 
-Test(my_map_creator, simple_test3)
+Test(my_map_creator, test_simple_3)
 {
 	char **map = my_map_creator(4);
 

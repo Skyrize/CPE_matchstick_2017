@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-Test(place_stick, simple_test)
+Test(place_stick, test_simple)
 {
 	char **map = malloc(sizeof(char *) * 5);
 	int length = 5;
@@ -24,7 +24,7 @@ Test(place_stick, simple_test)
 	cr_assert_str_eq(map[3], "*****", "fnct changed last line!\n");
 }
 
-Test(place_stick, simple_test_2)
+Test(place_stick, test_simple_2)
 {
 	char **map = malloc(sizeof(char *) * 6);
 	int length = 7;
